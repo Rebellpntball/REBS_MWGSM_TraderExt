@@ -97,19 +97,38 @@ class REBS_VehicleCatalog
 
 		ref REBS_VehicleCatalogFile cat = new REBS_VehicleCatalogFile();
 		ref REBS_VehicleEntry oh = new REBS_VehicleEntry();
-		ooh.ClassName = "OffroadHatchback";
-		ooh.BuyPrice = 2500;
-		ooh.SellPrice = 400;
-		ooh.MaxStock = 2;
-		ooh.Attachments.Insert("HatchbackWheel");
-		ooh.Attachments.Insert("HatchbackWheel");
-		ooh.Attachments.Insert("HatchbackWheel");
-		ooh.Attachments.Insert("HatchbackWheel");
-		ooh.Attachments.Insert("HatchbackWheel");
-		ooh.Attachments.Insert("CarBattery");
-		ooh.Attachments.Insert("CarRadiator");
-		ooh.Attachments.Insert("SparkPlug");
+		oh.ClassName = "OffroadHatchback";
+		oh.BuyPrice = 2500;
+		oh.SellPrice = 400;
+		oh.MaxStock = 2;
+		oh.Enabled = 1;
+		oh.Attachments.Insert("HatchbackWheel");
+		oh.Attachments.Insert("HatchbackWheel");
+		oh.Attachments.Insert("HatchbackWheel");
+		oh.Attachments.Insert("HatchbackWheel");
+		oh.Attachments.Insert("HatchbackWheel");
+		oh.Attachments.Insert("CarBattery");
+		oh.Attachments.Insert("CarRadiator");
+		oh.Attachments.Insert("SparkPlug");
+		oh.Attachments.Insert("HatchbackHood");
+		oh.Attachments.Insert("HatchbackTrunk");
+		oh.Attachments.Insert("HatchbackDoors_Driver");
+		oh.Attachments.Insert("HatchbackDoors_CoDriver");
+		oh.Attachments.Insert("HeadlightH7");
+		oh.Attachments.Insert("HeadlightH7");
 		cat.Vehicles.Insert(oh);
+
+		ref REBS_VehicleEntry bike = new REBS_VehicleEntry();
+		bike.ClassName = "Motorbike_01_Blue";
+		bike.BuyPrice = 800;
+		bike.SellPrice = 150;
+		bike.MaxStock = 3;
+		bike.Enabled = 1;
+		bike.Attachments.Insert("MotorbikeWheel");
+		bike.Attachments.Insert("MotorbikeWheel");
+		bike.Attachments.Insert("SparkPlug");
+		cat.Vehicles.Insert(bike);
+
 		JsonFileLoader<REBS_VehicleCatalogFile>.JsonSaveFile(path, cat);
 		Print("[REBS_MWGSM_TraderExt] Wrote example vehicle catalog: " + path);
 	}
