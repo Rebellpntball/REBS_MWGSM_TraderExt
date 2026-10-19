@@ -1,0 +1,155 @@
+{
+	"Enabled": 1,
+	"MaxVehicleDistanceToTrader": 120.0,
+	"EnableDebugMode": 0,
+	"LogTransactions": 1,
+	"LogSpawnLocations": 1,
+
+	"GlobalVehicleSpawnPoints": [],
+
+	"VehicleDefaultAttachments": {
+		"OffroadHatchback": [
+			"HatchbackWheel", "HatchbackWheel", "HatchbackWheel", "HatchbackWheel", "HatchbackWheel",
+			"CarBattery", "CarRadiator", "SparkPlug",
+			"HatchbackHood", "HatchbackTrunk",
+			"HatchbackDoors_Driver", "HatchbackDoors_CoDriver",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"Hatchback_02": [
+			"Hatchback_02_Wheel", "Hatchback_02_Wheel", "Hatchback_02_Wheel", "Hatchback_02_Wheel", "Hatchback_02_Wheel",
+			"Hatchback_02_Door_1_1", "Hatchback_02_Door_2_1", "Hatchback_02_Door_1_2", "Hatchback_02_Door_2_2",
+			"Hatchback_02_Hood", "Hatchback_02_Trunk",
+			"CarBattery", "CarRadiator", "SparkPlug",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"CivilianSedan": [
+			"CivSedanWheel", "CivSedanWheel", "CivSedanWheel", "CivSedanWheel", "CivSedanWheel",
+			"CarBattery", "CarRadiator", "SparkPlug",
+			"CivSedanHood", "CivSedanTrunk",
+			"CivSedanDoors_Driver", "CivSedanDoors_CoDriver",
+			"CivSedanDoors_BackLeft", "CivSedanDoors_BackRight",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"Sedan_02": [
+			"Sedan_02_Wheel", "Sedan_02_Wheel", "Sedan_02_Wheel", "Sedan_02_Wheel", "Sedan_02_Wheel",
+			"CarBattery", "CarRadiator", "SparkPlug",
+			"Sedan_02_Hood", "Sedan_02_Trunk",
+			"Sedan_02_Door_1_1", "Sedan_02_Door_2_1", "Sedan_02_Door_1_2", "Sedan_02_Door_2_2",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"Truck_01_Covered": [
+			"Truck_01_Wheel", "Truck_01_Wheel", "Truck_01_Wheel", "Truck_01_Wheel",
+			"Truck_01_WheelDouble", "Truck_01_WheelDouble", "Truck_01_WheelDouble", "Truck_01_WheelDouble",
+			"TruckBattery", "Truck_01_Hood",
+			"Truck_01_Door_1_1", "Truck_01_Door_2_1",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"Offroad_02": [
+			"Offroad_02_Wheel", "Offroad_02_Wheel", "Offroad_02_Wheel", "Offroad_02_Wheel", "Offroad_02_Wheel",
+			"Offroad_02_Door_1_1", "Offroad_02_Door_2_1", "Offroad_02_Door_1_2", "Offroad_02_Door_2_2",
+			"Offroad_02_Hood", "Offroad_02_Trunk",
+			"CarBattery", "GlowPlug",
+			"HeadlightH7", "HeadlightH7"
+		],
+		"Motorbike_01_Blue": ["MotorbikeWheel", "MotorbikeWheel", "SparkPlug"],
+		"Motorbike_01_Red": ["MotorbikeWheel", "MotorbikeWheel", "SparkPlug"],
+		"Motorbike_01_Yellow": ["MotorbikeWheel", "MotorbikeWheel", "SparkPlug"],
+		"Motorbike_02_Red": [
+			"Motorbike_02_Wheel_1", "Motorbike_02_Wheel_2", "SparkPlug",
+			"Motorbike_02_ShieldFront_Red", "Motorbike_02_ShieldLeft_Red", "Motorbike_02_ShieldRight_Red"
+		],
+		"Motorbike_02_Yellow": [
+			"Motorbike_02_Wheel_1", "Motorbike_02_Wheel_2", "SparkPlug",
+			"Motorbike_02_ShieldFront_Yellow", "Motorbike_02_ShieldLeft_Yellow", "Motorbike_02_ShieldRight_Yellow"
+		],
+		"Motorbike_02_Green": [
+			"Motorbike_02_Wheel_1", "Motorbike_02_Wheel_2", "SparkPlug",
+			"Motorbike_02_ShieldFront_Green", "Motorbike_02_ShieldLeft_Green", "Motorbike_02_ShieldRight_Green"
+		],
+		"Motorbike_02_Blue": [
+			"Motorbike_02_Wheel_1", "Motorbike_02_Wheel_2", "SparkPlug",
+			"Motorbike_02_ShieldFront_Blue", "Motorbike_02_ShieldLeft_Blue", "Motorbike_02_ShieldRight_Blue"
+		]
+	},
+
+	"StaticTraders": [
+		{
+			"Name": "Vehicle Trader - Green Mountain",
+			"Enabled": 1,
+			"Position": [3700.0, 402.0, 5985.0],
+			"Orientation": [90.0, 0.0, 0.0],
+			"CategoryFilter": "Vehicles",
+			"MaxItemsInStock": 18,
+			"BuyPriceMultiplier": 2.0,
+			"SellPriceMultiplier": 0.35,
+			"GuaranteedStock": [
+				"OffroadHatchback", "Hatchback_02", "CivilianSedan", "Sedan_02",
+				"Motorbike_01_Blue", "Motorbike_01_Red", "Motorbike_02_Red"
+			],
+			"TraderNPCGear": [
+				"GorkaHelmet", "USMCJacket_Desert", "USMCPants_Desert", "MilitaryBoots_Black"
+			],
+			"VehicleSpawnPoints": [
+				{ "Position": [3715.0, 402.0, 5995.0], "Orientation": [90.0, 0.0, 0.0] },
+				{ "Position": [3725.0, 402.0, 6000.0], "Orientation": [90.0, 0.0, 0.0] },
+				{ "Position": [3735.0, 402.0, 6005.0], "Orientation": [90.0, 0.0, 0.0] },
+				{ "Position": [3710.0, 402.0, 5975.0], "Orientation": [270.0, 0.0, 0.0] }
+			]
+		},
+		{
+			"Name": "Field Medic - Elektrozavodsk",
+			"Enabled": 1,
+			"Position": [10450.0, 6.0, 2350.0],
+			"Orientation": [0.0, 0.0, 0.0],
+			"CategoryFilter": "Medical",
+			"MaxItemsInStock": 40,
+			"BuyPriceMultiplier": 1.4,
+			"SellPriceMultiplier": 0.5,
+			"GuaranteedStock": [
+				"Morphine", "Epinephrine", "BandageDressing", "SalineBagIV", "BloodBagIV",
+				"TetracyclineAntibiotics", "CharcoalTablets", "VitaminBottle", "PainkillerTablets", "DisinfectantSpray"
+			],
+			"TraderNPCGear": [
+				"SurgicalGloves_Blue", "MedicalScrubsShirt_Blue", "MedicalScrubsPants_Blue", "AthleticShoes_Blue"
+			],
+			"VehicleSpawnPoints": []
+		},
+		{
+			"Name": "Building Supplies - Severograd",
+			"Enabled": 1,
+			"Position": [7980.0, 140.0, 12650.0],
+			"Orientation": [180.0, 0.0, 0.0],
+			"CategoryFilter": "Tools",
+			"MaxItemsInStock": 35,
+			"BuyPriceMultiplier": 1.6,
+			"SellPriceMultiplier": 0.4,
+			"GuaranteedStock": [
+				"NailBox", "MetalPlate", "WoodenPlank", "SheetMetal",
+				"Hacksaw", "HandSaw", "Hammer", "Pliers", "Shovel", "Pickaxe", "Crowbar",
+				"DuctTape", "Rope", "MetalWire"
+			],
+			"TraderNPCGear": [
+				"ConstructionHelmet_Yellow", "JumpsuitJacket_Blue", "JumpsuitPants_Blue", "WorkingBoots_Brown"
+			],
+			"VehicleSpawnPoints": []
+		},
+		{
+			"Name": "Weapons Dealer - NWAF South",
+			"Enabled": 0,
+			"Position": [4500.0, 340.0, 10200.0],
+			"Orientation": [45.0, 0.0, 0.0],
+			"CategoryFilter": "Weapons",
+			"MaxItemsInStock": 25,
+			"BuyPriceMultiplier": 2.5,
+			"SellPriceMultiplier": 0.3,
+			"GuaranteedStock": [
+				"AKM", "M4A1", "SVD", "Winchester70", "CZ527", "MP5K", "FNX45", "Glock19",
+				"Mag_AKM_30Rnd", "Mag_STANAG_30Rnd", "AmmoBox_762x39_20Rnd", "AmmoBox_556x45_20Rnd"
+			],
+			"TraderNPCGear": [
+				"BallisticHelmet_Black", "TTsKOJacket_Camo", "TTSKOPants", "MilitaryBoots_Black"
+			],
+			"VehicleSpawnPoints": []
+		}
+	]
+}
