@@ -1,0 +1,14 @@
+This extension mod depends on and extends MWGSM Roaming Trader.
+
+All rights to the original MWGSM Roaming Trader code and design remain with
+Muddywaters Gaming & Server Management LLC (MWGSM).
+
+The REBS_MWGSM_TraderExt additions (static trader system, vehicle spawn helpers,
+separate config) are provided for use with the original mod.
+
+When publishing to the Steam Workshop you MUST:
+1. List MWGSM Roaming Trader as a required dependency.
+2. Respect any license / redistribution terms set by MWGSM.
+3. Not claim the original roaming trader system as your own work.
+
+Contact MWGSM for commercial / redistribution questions regarding the parent mod.

@@ -1,0 +1,26 @@
+# DayZ / Enforce
+*.pbo
+*.bisign
+*.bikey
+*.log
+*.RPT
+*.ADM
+
+# Local profile / generated config (never commit live server configs)
+$profile/
+profiles/
+*.json.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+*.user
+
+# Build artifacts
+bin/
+obj/
+build/
