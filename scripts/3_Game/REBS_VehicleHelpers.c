@@ -9,16 +9,26 @@ class REBS_VehicleHelpers
 		if (className == "")
 			return false;
 
-		// Fast path – common vanilla vehicles
+		// Fast path – common vanilla cars (1.30)
 		if (className == "OffroadHatchback" || className == "Hatchback_02" ||
 			className == "CivilianSedan" || className == "Sedan_02" ||
 			className == "Truck_01_Covered" || className == "Offroad_02")
 			return true;
 
-		// Config inheritance check (works for modded cars that inherit CarScript / Car)
+		// 1.30 motorbikes (Jana 50 / Bitrak 682) – MotorbikeScript is NOT CarScript
+		if (className.IndexOf("Motorbike_01") == 0 || className.IndexOf("Motorbike_02") == 0)
+			return true;
+
+		// Config inheritance – cars, trucks
 		if (GetGame().IsKindOf(className, "CarScript"))
 			return true;
 		if (GetGame().IsKindOf(className, "Car"))
+			return true;
+
+		// 1.30 two-wheel hierarchy (sibling of Car, not child)
+		if (GetGame().IsKindOf(className, "MotorbikeScript"))
+			return true;
+		if (GetGame().IsKindOf(className, "Motorbike"))
 			return true;
 
 		// Expansion / other common bases
@@ -32,7 +42,6 @@ class REBS_VehicleHelpers
 		return false;
 	}
 
-	// Attach the default parts defined in config (or fall back to empty)
 	static void AttachDefaultParts(EntityAI vehicle, string className)
 	{
 		if (!vehicle || className == "")
@@ -61,15 +70,10 @@ class REBS_VehicleHelpers
 
 			EntityAI attached = vehicle.GetInventory().CreateAttachment(partClass);
 			if (!attached)
-			{
-				// Some parts may fail (slot already filled / wrong type) – just log
 				cfg.DebugLog("Failed to attach " + partClass + " to " + className);
-			}
 		}
 	}
 
-	// Find a free spawn point near the given trader position
-	// Returns true and fills outPos / outOri when a free spot is found
 	static bool FindFreeSpawnPoint(vector traderPos, out vector outPos, out vector outOri, array<ref REBS_VehicleSpawnPoint> preferredPoints = null)
 	{
 		REBS_MWGSM_TraderExtConfig cfg = REBS_MWGSM_TraderExtConfig.GetInstance();
@@ -78,7 +82,6 @@ class REBS_VehicleHelpers
 
 		float maxDist = cfg.MaxVehicleDistanceToTrader;
 
-		// 1. Prefer points that belong to this trader
 		if (preferredPoints && preferredPoints.Count() > 0)
 		{
 			int pCount = preferredPoints.Count();
@@ -100,7 +103,6 @@ class REBS_VehicleHelpers
 			}
 		}
 
-		// 2. Fall back to global list
 		int gCount = cfg.GlobalVehicleSpawnPoints.Count();
 		for (int g = 0; g < gCount; g++)
 		{
@@ -122,7 +124,6 @@ class REBS_VehicleHelpers
 		return false;
 	}
 
-	// Simple clearance check – no objects of type Car / large objects in a small radius
 	static bool IsSpawnPointClear(vector pos)
 	{
 		ref array<Object> objects = new array<Object>();
@@ -137,22 +138,20 @@ class REBS_VehicleHelpers
 
 			if (obj.IsInherited(CarScript) || obj.IsInherited(Car))
 				return false;
+			if (obj.IsInherited(MotorbikeScript) || obj.IsInherited(Motorbike))
+				return false;
 
-			// Block if a building is right on the spot
 			if (obj.IsBuilding())
 				return false;
 		}
 		return true;
 	}
 
-	// Spawn a vehicle at the given position with default parts
-	// Returns the created EntityAI or null on failure
 	static EntityAI SpawnVehicleWithParts(string className, vector pos, vector ori)
 	{
 		if (className == "" || pos == vector.Zero)
 			return null;
 
-		// Surface Y correction
 		pos[1] = GetGame().SurfaceY(pos[0], pos[2]);
 
 		Object obj = GetGame().CreateObjectEx(className, pos,
